@@ -65,8 +65,40 @@ module.exports.displayEditPage = (req, res, next) => {
 /*
 Add your code here to process EDIT
 */
+module.exports.processEditPage = (req, res, next) => {
+    let id = req.params.id;
+
+    updatedBook = {
+        name: req.body.name,
+        author: req.body.author,
+        published: req.body.published,
+        description: req.body.description,
+        price: req.body.price
+    }
+
+    Book.updateOne({ _id: id }, updatedBook, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            res.redirect('/book-list');
+        }
+    })
+}
 
 
 /*
 Add your code here to perform DELETE operation
 */
+module.exports.performDelete = (req, res, next) => {
+    let id = req.params.id;
+
+    Book.deleteOne({ _id: id }, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            res.redirect('/book-list');
+        }
+    })
+}

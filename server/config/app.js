@@ -1,6 +1,6 @@
 /*
 File name: app.js
-Student’s Name: Wonsuk Cha
+Student’s Name: -
 StudentID: 301155132
 Date: 2021.03.04.
 */

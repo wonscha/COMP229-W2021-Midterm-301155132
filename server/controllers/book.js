@@ -52,7 +52,7 @@ module.exports.processAddPage = (req, res, next) => {
 
 }
 
-// controller: display edit page
+// controller: display book edit page
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -69,7 +69,7 @@ module.exports.displayEditPage = (req, res, next) => {
     })
 }
 
-// controller: procee edit page
+// controller: process book edit page
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
 

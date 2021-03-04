@@ -1,56 +1,62 @@
+<!-- 
+File name: add.ejs
+Student’s Name: Wonsuk Cha
+StudentID: 301155132
+Date: 2021.03.04.
+-->
+
+
+<!-- display partials: header, main nav -->
 <%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
 
-    <%- include ../partials/main_nav.ejs %>
+<!-- Content for the Add page -->
 
-        <!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1>
+                <%= title %>
+            </h1>
 
-        <!-- ADD YOU CODE TO CREATE THE ADD PAGE -->
-
-        <div class="container">
-            <div class="row">
-                <div class="offset-md-3 col-md-6">
-                    <h1>
-                        <%= title %>
-                    </h1>
-
-                    <form method="post" autocomplete="off">
-                        <div class="form-group">
-                            <label for="name">Book Title</label>
-                            <input type="text" name="name" id="name" class="form-control"
-                                placeholder="Enter book title">
-                        </div>
-                        <div class="form-group">
-                            <label for="author">Author</label>
-                            <input type="text" name="author" id="author" class="form-control"
-                                placeholder="Enter author name">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="published">Published year</label>
-                            <input type="text" name="published" id="published" class="form-control"
-                                placeholder="Enter published year">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" id="description" placeholder="Enter description of the book"
-                                class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="price">Price</label>
-                            <input type="text" name="price" id="price" class="form-control" placeholder="Enter price">
-                        </div>
-
-                        <button class="btn btn-primary" type="submit">
-                            Submit
-                        </button>
-                        <a href="/book-list" class="btn btn-secondary">Cancel</a>
-
-                    </form>
+            <form method="post" autocomplete="off">
+                <div class="form-group">
+                    <label for="name">Book Title</label>
+                    <input type="text" name="name" id="name" class="form-control"
+                        placeholder="Enter book title">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" class="form-control"
+                        placeholder="Enter author name">
+
+                </div>
+                <div class="form-group">
+                    <label for="published">Published year</label>
+                    <input type="text" name="published" id="published" class="form-control"
+                        placeholder="Enter published year">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" placeholder="Enter description of the book"
+                        class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" name="price" id="price" class="form-control" placeholder="Enter price">
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    Submit
+                </button>
+                <a href="/book-list" class="btn btn-secondary">Cancel</a>
+
+            </form>
         </div>
+    </div>
+</div>
 
 
-        <%- include ../partials/bottom_nav.ejs %>
-
-            <%- include ../partials/footer.ejs %>
+<!-- display partials: bottom nav, footer -->
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

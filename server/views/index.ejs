@@ -1,18 +1,25 @@
-<%- include partials/header.ejs %>
+<!-- 
+File name: index.ejs
+Student’s Name: -
+StudentID: 301155132
+Date: 2021.03.04.
+-->
 
+<!-- display partials: header, main nav -->
+<%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
   
 
-  <!-- Main Content -->
-  <main class="container">
-    <div class="jumbotron">
-      <h1 class="display-4">Welcome to the <%= title %> page</h1>
-      
-    </div>
-  </main>
-  
-<%- include partials/bottom_nav.ejs %>  
+<!-- Index page -->
+<main class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to the <%= title %> page</h1>
+    
+  </div>
+</main>
 
+<!-- display partials: bottom nav, footer -->
+<%- include partials/bottom_nav.ejs %>  
 <%- include partials/footer.ejs %>
   
 

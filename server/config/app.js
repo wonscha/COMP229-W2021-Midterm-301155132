@@ -1,3 +1,10 @@
+/*
+File name: app.js
+Student’s Name: Wonsuk Cha
+StudentID: 301155132
+Date: 2021.03.04.
+*/
+
 // installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');

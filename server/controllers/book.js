@@ -1,3 +1,11 @@
+/*
+File name: book.js
+Student’s Name: Wonsuk Cha
+StudentID: 301155132
+Date: 2021.03.04.
+*/
+
+// import modules
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -5,23 +13,24 @@ let mongoose = require('mongoose');
 // create a reference to the model
 let Book = require('../models/book');
 
+// controller: display book list page
 module.exports.displayBookList = (req, res, next) => {
     Book.find((err, bookList) => {
         if (err) {
             return console.error(err);
         }
         else {
-            //console.log(BookList);
-
             res.render('book/list', { title: 'Books', BookList: bookList });
         }
     });
 }
 
+// controller: display book add page
 module.exports.displayAddPage = (req, res, next) => {
     res.render('book/add', { title: 'Add Book' })
 }
 
+// controller: process book add page
 module.exports.processAddPage = (req, res, next) => {
     let newBook = Book({
         "name": req.body.name,
@@ -37,15 +46,13 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            // refresh the book list
             res.redirect('/book-list');
         }
     });
 
 }
-/*
-Add your code here to display EDIT
-*/
+
+// controller: display edit page
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -62,9 +69,7 @@ module.exports.displayEditPage = (req, res, next) => {
     })
 }
 
-/*
-Add your code here to process EDIT
-*/
+// controller: procee edit page
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -86,10 +91,7 @@ module.exports.processEditPage = (req, res, next) => {
     })
 }
 
-
-/*
-Add your code here to perform DELETE operation
-*/
+// controller: perform delete
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 

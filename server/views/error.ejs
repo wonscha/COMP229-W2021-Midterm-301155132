@@ -1,14 +1,21 @@
-<%- include partials/header.ejs %>
+<!-- 
+File name: error.ejs
+Student’s Name: -
+StudentID: 301155132
+Date: 2021.03.04.
+-->
 
+<!-- display partials: header, main nav -->
+<%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
+<!-- Error page -->
 <div class="container">
     <h1><%= message %></h1>
     <h2><%= error.status %></h2>
     <pre><%= error.stack %></pre>
 </div>
 
-
+<!-- display partials: bottom nav, footer -->
 <%- include partials/bottom_nav.ejs %>
-
 <%- include partials/footer.ejs %>

@@ -12,14 +12,14 @@ let bookController = require('../controllers/book');
 /* GET Route for the Book List page - READ Operation */
 router.get('/', bookController.displayBookList);
 
-/* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', bookController.displayAddPage);
+// /* GET Route for displaying the Add page - CREATE Operation */
+// router.get('/add', bookController.displayAddPage);
 
-/* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', bookController.processAddPage);
+// /* POST Route for processing the Add page - CREATE Operation */
+// router.post('/add', bookController.processAddPage);
 
-/* GET Route for displaying the Edit page - UPDATE Operation */
-router.get('/edit/:id', bookController.displayEditPage);
+// /* GET Route for displaying the Edit page - UPDATE Operation */
+// router.get('/edit/:id', bookController.displayEditPage);
 
 /* 
 * add your code to 

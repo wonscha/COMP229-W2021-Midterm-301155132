@@ -7,21 +7,19 @@ let Book = require('../models/book');
 
 module.exports.displayBookList = (req, res, next) => {
     Book.find((err, bookList) => {
-        if(err)
-        {
+        if (err) {
             return console.error(err);
         }
-        else
-        {
+        else {
             //console.log(BookList);
 
-            res.render('book/list', {title: 'Books', BookList: bookList});      
+            res.render('book/list', { title: 'Books', BookList: bookList });
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {title: 'Add Book'})          
+    res.render('book/add', { title: 'Add Book' })
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -33,14 +31,12 @@ module.exports.processAddPage = (req, res, next) => {
         "price": req.body.price
     });
 
-    Book.create(newBook, (err, Book) =>{
-        if(err)
-        {
+    Book.create(newBook, (err, Book) => {
+        if (err) {
             console.log(err);
             res.end(err);
         }
-        else
-        {
+        else {
             // refresh the book list
             res.redirect('/book-list');
         }
@@ -50,6 +46,21 @@ module.exports.processAddPage = (req, res, next) => {
 /*
 Add your code here to display EDIT
 */
+module.exports.displayEditPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Book.findById(id, (err, book) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            res.render('book/edit', {
+                title: 'Edit Book',
+                book: book
+            })
+        }
+    })
+}
 
 /*
 Add your code here to process EDIT
